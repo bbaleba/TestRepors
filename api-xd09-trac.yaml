@@ -1,0 +1,612 @@
+swagger: '2.0'
+info:
+  title: api-xd09-trac
+  version: '1.0'
+host: api.az.tgscloud.net
+basePath: /xd09/trac
+schemes:
+  - https
+paths:
+  /api/v2/redirect:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: get-api-v2-redirect
+      summary: /api/v2/redirect - GET
+      parameters:
+        - name: code
+          in: query
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+  /api/v2/refresh:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: get-api-v2-refresh
+      summary: /api/v2/refresh - GET
+      parameters:
+        - name: token
+          in: header
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+  /api/v4/tracks:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: get-api-v4-tracks
+      summary: /api/v4/tracks - GET
+      parameters:
+        - name: token
+          in: header
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+  /api/v4/tracks/{id}:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: get-api-v4-tracks-id
+      summary: /api/v4/tracks/{id} - GET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: token
+          in: header
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+  /api/v4/tracks/{id}/lastPosition:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: get-api-v4-tracks-id-lastposition
+      summary: /api/v4/tracks/{id}/lastPosition - GET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: token
+          in: header
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+  /api/v3/shipments:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: get-api-v3-shipments
+      summary: /api/v3/shipments - GET
+      parameters:
+        - name: token
+          in: header
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /api/v3/shipments/vehicles/{id}:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: get-api-v3-shipments-vehicles-id
+      summary: /api/v3/shipments/vehicles/{id} - GET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: token
+          in: header
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /api/v1/user-authorization:
+    get:
+      description: Retrieve all users authorization
+      operationId: get-api-v1-user-authorization
+      summary: /api/v1/user-authorization - GET
+      parameters:
+        - name: token
+          in: header
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+    post:
+      description: Create new user authorization
+      operationId: post-api-v1-user-authorization
+      summary: /api/v1/user-authorization - POST
+      parameters:
+        - name: apiV1User-authorizationPostRequest
+          in: body
+          schema:
+            $ref: '#/definitions/ApiV1User-authorizationPostRequest'
+      consumes:
+        - application/json
+      responses:
+        '201':
+          description: Authorization added
+  /api/v1/user-authorization/{id}:
+    get:
+      description: Retrieve user authorization
+      operationId: get-api-v1-user-authorization-id
+      summary: /api/v1/user-authorization/{id} - GET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+    put:
+      description: Update user authorization
+      operationId: put-api-v1-user-authorization-id
+      summary: /api/v1/user-authorization/{id} - PUT
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: apiV1User-authorization-id-PutRequest
+          in: body
+          schema:
+            $ref: '#/definitions/ApiV1User-authorization-id-PutRequest'
+      consumes:
+        - application/json
+      responses:
+        '201':
+          description: Permission added
+    delete:
+      description: Delete user authorization
+      operationId: delete-api-v1-user-authorization-id
+      summary: /api/v1/user-authorization/{id} - DELETE
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '204':
+          description: Authorization deleted
+  /api/v1/vehicles:
+    get:
+      description: Retrieve all users vehicle
+      operationId: get-api-v1-vehicles
+      summary: /api/v1/vehicles - GET
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+    post:
+      description: Create new user Vehicle
+      operationId: post-api-v1-vehicles
+      summary: /api/v1/vehicles - POST
+      parameters:
+        - name: apiV1VehiclesPostRequest
+          in: body
+          schema:
+            $ref: '#/definitions/ApiV1VehiclesPostRequest'
+      consumes:
+        - application/json
+      responses:
+        '201':
+          description: Vehicle added
+  /api/v1/vehicles/{id}:
+    get:
+      description: Retrieve vehicle
+      operationId: get-api-v1-vehicles-id
+      summary: /api/v1/vehicles/{id} - GET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+    put:
+      description: Update vehicle
+      operationId: put-api-v1-vehicles-id
+      summary: /api/v1/vehicles/{id} - PUT
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: apiV1Vehicles-id-PutRequest
+          in: body
+          schema:
+            $ref: '#/definitions/ApiV1Vehicles-id-PutRequest'
+      consumes:
+        - application/json
+      responses:
+        '201':
+          description: Vehicle added
+  /api/v3/depots/{id}/geolocation:
+    put:
+      description: update geolocalisation
+      operationId: put-api-v3-depots-id-geolocation
+      summary: /api/v3/depots/{id}/geolocation - PUT
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: token
+          in: header
+          type: string
+        - name: apiV3Depots-id-GeolocationPutRequest
+          in: body
+          schema:
+            $ref: '#/definitions/ApiV3Depots-id-GeolocationPutRequest'
+      consumes:
+        - application/json
+      responses:
+        '201':
+          description: Geolocalisation updated
+  /api/v3/clients/{id}/geolocation:
+    put:
+      description: update geolocalisation
+      operationId: put-api-v3-clients-id-geolocation
+      summary: /api/v3/clients/{id}/geolocation - PUT
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: token
+          in: header
+          type: string
+        - name: apiV3Clients-id-GeolocationPutRequest
+          in: body
+          schema:
+            $ref: '#/definitions/ApiV3Clients-id-GeolocationPutRequest'
+      consumes:
+        - application/json
+      responses:
+        '201':
+          description: Geolocalisation updated
+  /api/v1/drivers:
+    get:
+      description: Retrieve all drivers
+      operationId: get-api-v1-drivers
+      summary: /api/v1/drivers - GET
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+    post:
+      description: Create new Driver
+      operationId: post-api-v1-drivers
+      summary: /api/v1/drivers - POST
+      parameters:
+        - name: apiV1DriversPostRequest
+          in: body
+          schema:
+            $ref: '#/definitions/ApiV1DriversPostRequest'
+      consumes:
+        - application/json
+      responses:
+        '201':
+          description: driver added
+  /api/v1/drivers/{id}:
+    get:
+      description: Retrieve driver
+      operationId: get-api-v1-drivers-id
+      summary: /api/v1/drivers/{id} - GET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+    put:
+      description: Update driver
+      operationId: put-api-v1-drivers-id
+      summary: /api/v1/drivers/{id} - PUT
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: apiV1Drivers-id-PutRequest
+          in: body
+          schema:
+            $ref: '#/definitions/ApiV1Drivers-id-PutRequest'
+      consumes:
+        - application/json
+      responses:
+        '201':
+          description: Driver updated
+  /api/v1/referential/vehicles:
+    get:
+      description: Retrieve vehicle referential data
+      operationId: get-api-v1-referential-vehicles
+      summary: /api/v1/referential/vehicles - GET
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /api/v1/carriers:
+    get:
+      description: Retrieve carrier names and codes
+      operationId: get-api-v1-carriers
+      summary: /api/v1/carriers - GET
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /api/v1/vehicle-groups:
+    get:
+      description: Retrieve vehicle groups referential data
+      operationId: get-api-v1-vehicle-groups
+      summary: /api/v1/vehicle-groups - GET
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /api/v3/depots:
+    get:
+      description: Retrieve list depots
+      operationId: get-api-v3-depots
+      summary: /api/v3/depots - GET
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /token:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: get-token
+      summary: /token - GET
+      parameters:
+        - name: tenantId
+          in: query
+          type: string
+      responses:
+        '302':
+          description: Auto generated using Swagger Inspector
+  /api/v1/transport-units:
+    get:
+      description: Retrieve all transport units
+      operationId: get-api-v1-transport-units
+      summary: /api/v1/transport-units - GET
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+    post:
+      description: Create new transport unit
+      operationId: post-api-v1-transport-units
+      summary: /api/v1/transport-units - POST
+      parameters:
+        - name: apiV1Transport-unitsPostRequest
+          in: body
+          schema:
+            $ref: '#/definitions/ApiV1Transport-unitsPostRequest'
+      consumes:
+        - application/json
+      responses:
+        '201':
+          description: transport unit added
+  /api/v1/transport-units/{id}:
+    get:
+      description: Retrieve transport unit
+      operationId: get-api-v1-transport-units-id
+      summary: /api/v1/transport-units/{id} - GET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+    put:
+      description: Update transport unit
+      operationId: put-api-v1-transport-units-id
+      summary: /api/v1/transport-units/{id} - PUT
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+        - name: apiV1Transport-units-id-PutRequest
+          in: body
+          schema:
+            $ref: '#/definitions/ApiV1Transport-units-id-PutRequest'
+      consumes:
+        - application/json
+      responses:
+        '200':
+          description: transport unit updated
+  /token/logout:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: get-token-logout
+      summary: /token/logout - GET
+      responses:
+        '302':
+          description: Auto generated using Swagger Inspector
+  /logout:
+    get:
+      description: Auto generated using Swagger Inspector
+      operationId: get-logout
+      summary: /logout - GET
+      responses:
+        '302':
+          description: Auto generated using Swagger Inspector
+  /api/v1/referential/drivers/validity-parameters:
+    get:
+      description: Retrieve validity parameters of a driver
+      operationId: get-api-v1-referential-drivers-validity-parameters
+      summary: /api/v1/referential/drivers/validity-parameters - GET
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /api/v1/referential/drivers:
+    get:
+      description: Retrieve vehicle referential data
+      operationId: get-api-v1-referential-drivers
+      summary: /api/v1/referential/drivers - GET
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /api/v1/traceability/drivers/{id}:
+    get:
+      description: Retrieve hisotry  of a driver modifications
+      operationId: get-api-v1-traceability-drivers-id
+      summary: /api/v1/traceability/drivers/{id} - GET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /api/v1/traceability/vehicles/{id}:
+    get:
+      description: Retrieve hisotry  of a driver modifications
+      operationId: get-api-v1-traceability-vehicles-id
+      summary: /api/v1/traceability/vehicles/{id} - GET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /api/v1/traceability/transport-units/{id}:
+    get:
+      description: Retrieve hisotry  of a driver modifications
+      operationId: get-api-v1-traceability-transport-units-id
+      summary: /api/v1/traceability/transport-units/{id} - GET
+      parameters:
+        - name: id
+          in: path
+          required: true
+          type: string
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+  /api/v1/referential/vehicles/validity-parameters:
+    get:
+      description: Retrieve validity parameters of a vehicle
+      operationId: get-api-v1-referential-vehicles-validity-parameters
+      summary: /api/v1/referential/vehicles/validity-parameters - GET
+      responses:
+        '200':
+          description: Auto generated using Swagger Inspector
+        '400':
+          description: Auto generated using Swagger Inspector
+        '500':
+          description: Auto generated using Swagger Inspector
+definitions:
+  ApiV1User-authorizationPostRequest:
+    type: object
+    example: {}
+  ApiV1User-authorization-id-PutRequest:
+    type: object
+    example: {}
+  ApiV1VehiclesPostRequest:
+    type: object
+    example: {}
+  ApiV1Vehicles-id-PutRequest:
+    type: object
+    example: {}
+  ApiV3Depots-id-GeolocationPutRequest:
+    type: object
+    example: {}
+  ApiV3Clients-id-GeolocationPutRequest:
+    type: object
+    example: {}
+  ApiV1DriversPostRequest:
+    type: object
+    example: {}
+  ApiV1Drivers-id-PutRequest:
+    type: object
+    example: {}
+  ApiV1Transport-unitsPostRequest:
+    type: object
+    example: {}
+  ApiV1Transport-units-id-PutRequest:
+    type: object
+    example: {}
+tags: []

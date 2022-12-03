@@ -1,0 +1,222 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "api-xd00-SHARK-conference-v0",
+    "version": "v0"
+  },
+  "host": "api.az.tgscloud.net",
+  "basePath": "/xd00/SHARK/conference/v0",
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "apiKeyHeader": {
+      "type": "apiKey",
+      "name": "Ocp-Apim-Subscription-Key",
+      "in": "header"
+    },
+    "apiKeyQuery": {
+      "type": "apiKey",
+      "name": "subscription-key",
+      "in": "query"
+    }
+  },
+  "security": [
+    {
+      "apiKeyHeader": []
+    },
+    {
+      "apiKeyQuery": []
+    }
+  ],
+  "paths": {
+    "/apim/opci/tevc/v1/cdr/": {
+      "post": {
+        "description": "putConsumption",
+        "operationId": "putConsumptionUsingPOST",
+        "summary": "putConsumption",
+        "tags": [
+          "tevc-controller"
+        ],
+        "parameters": [
+          {
+            "name": "session",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/Session"
+            },
+            "description": "session"
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApimOpciTevcV1CdrPost200-Response"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    },
+    "/apim/treezor/v1/status/": {
+      "post": {
+        "description": "checkRefundStatus",
+        "operationId": "checkRefundStatusUsingPOST",
+        "summary": "checkRefundStatus",
+        "tags": [
+          "treezor-controller"
+        ],
+        "parameters": [
+          {
+            "name": "refundId",
+            "in": "body",
+            "schema": {
+              "$ref": "#/definitions/RefundId"
+            },
+            "description": "refundId"
+          }
+        ],
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "*/*"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/ApimTreezorV1StatusPost200-Response"
+            }
+          },
+          "201": {
+            "description": "Created"
+          },
+          "401": {
+            "description": "Unauthorized"
+          },
+          "403": {
+            "description": "Forbidden"
+          },
+          "404": {
+            "description": "Not Found"
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Evses": {
+      "type": "object",
+      "properties": {
+        "evse_id": {
+          "type": "string"
+        },
+        "uid": {
+          "type": "string"
+        }
+      },
+      "title": "Evses"
+    },
+    "Location": {
+      "type": "object",
+      "properties": {
+        "address": {
+          "type": "string"
+        },
+        "city": {
+          "type": "string"
+        },
+        "country": {
+          "type": "string"
+        },
+        "evses": {
+          "$ref": "#/definitions/Evses"
+        },
+        "id": {
+          "type": "string"
+        },
+        "postal_code": {
+          "type": "string"
+        }
+      },
+      "title": "Location"
+    },
+    "Session": {
+      "type": "object",
+      "properties": {
+        "end_datetime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "id": {
+          "type": "string"
+        },
+        "location": {
+          "$ref": "#/definitions/Location"
+        },
+        "sessionsStatus": {
+          "type": "string",
+          "enum": [
+            "ACTIVE",
+            "COMPLETED",
+            "INVALID",
+            "PENDING"
+          ]
+        },
+        "start_datetime": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "total_energy": {
+          "type": "number",
+          "format": "double"
+        },
+        "total_time": {
+          "type": "number",
+          "format": "double"
+        }
+      },
+      "title": "Session",
+      "example": "{\r\n  \"end_datetime\": \"string\",\r\n  \"id\": \"string\",\r\n  \"location\": {\r\n    \"address\": \"string\",\r\n    \"city\": \"string\",\r\n    \"country\": \"string\",\r\n    \"evses\": {\r\n      \"evse_id\": \"string\",\r\n      \"uid\": \"string\"\r\n    },\r\n    \"id\": \"string\",\r\n    \"postal_code\": \"string\"\r\n  },\r\n  \"sessionsStatus\": \"ACTIVE\",\r\n  \"start_datetime\": \"string\",\r\n  \"total_energy\": 0.0,\r\n  \"total_time\": 0.0\r\n}"
+    },
+    "ApimOpciTevcV1CdrPost200-Response": {
+      "type": "object"
+    },
+    "RefundId": {
+      "type": "string",
+      "example": "string"
+    },
+    "ApimTreezorV1StatusPost200-Response": {
+      "type": "object"
+    }
+  },
+  "tags": [
+    {
+      "name": "tevc-controller",
+      "description": "TEVC Controller"
+    },
+    {
+      "name": "treezor-controller",
+      "description": "Treezor Controller"
+    }
+  ]
+}
